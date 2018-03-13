@@ -1,0 +1,157 @@
+/**
+* Growls
+*/
+
+// Variables
+$z-index-growl: -1;
+$z-index-growl-visible: 1150;
+
+// Default
+.growl {
+  z-index: 1150;
+  position: fixed;
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: none;
+  pointer-events: none;
+  visibility: hidden;
+  transition: all 0.1s ease-in-out;
+
+  &.growl--visible {
+    visibility: visible;
+  }
+}
+
+// Dialog
+.growl__dialog {
+  flex: none;
+  align-self: flex-start;
+  padding: 20px 30px;
+  margin: 0;
+  top: 50px;
+  width: 100%;
+  box-shadow: 0 3px 10px rgba(0,0,0,0.15);
+  border-radius: 0;
+  pointer-events: auto;
+  text-align: center;
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(-65px);
+  transform-origin: 50% 50%;
+  transition: all 0.2s ease-in-out;
+
+  // Visibility
+  .growl--visible & {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+    transition: all 0.2s ease-in-out;
+  }
+
+  // Positioning
+  &.growl__dialog--absolute {
+    position: absolute;
+  }
+
+  // Colors
+  &.growl__dialog--success {
+    color: $color-white;
+    background-color: $color-green;
+  }
+
+  &.growl__dialog--info {
+    color: $color-white;
+    background-color: $color-blue;
+  }
+
+  &.growl__dialog--warning {
+    color: $color-white;
+    background-color: $color-yellow;
+  }
+
+  &.growl__dialog--error {
+    color: $color-white;
+    background-color: $color-red;
+  }
+}
+
+// Heading
+.growl__heading {
+  margin: 0 0 $global-type-margin/4;
+  color: $color-white;
+}
+
+// Message
+.growl__message {
+  font-weight: $font-weight-normal;
+}
+
+// Close
+.growl__dismiss {
+  z-index: 100;
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  width: 20px;
+  height: 32px;
+  width: 32px;
+  line-height: 26px;
+  text-align: middle;
+  margin-left: 15px;
+  border: none;
+  border-radius: 25px;
+  opacity: 1 !important;
+  outline: none !important;
+  transform: scale(1,1);
+  transition: all 0.3s cubic-bezier(0.480, -0.600, 0.480, 1.650);
+
+  &:hover {
+    transform: scale(0.95,0.95);
+  }
+  &:active {
+    transform: scale(0.9,0.9);
+  }
+  &, &:focus {
+    background: rgba(0,0,0,0);
+  }
+  &:hover, &:active {
+    background: rgba(0,0,0,0.20);
+  }
+
+  span {
+    position: absolute;
+    display: inline-block;
+    width: 16px;
+    height: 2px;
+    top: 50%;
+    left: 50%;
+    margin-top: -1px;
+    margin-left: -8px;
+    transform: translate(3px, 0);
+
+    &::before,
+    &::after {
+      position: absolute;
+      display: block;
+      content: '';
+      top: 0;
+      left: 0;
+      width: 16px;
+      height: 2px;
+      background: $color-white;
+      border-radius: 2px;
+      transform-origin: 100%;
+    }
+    &::before {
+      transform: rotate(45deg) translate(0, 8px);
+    }
+    &::after {
+      transform: rotate(-45deg) translate(0, -8px);
+    }
+  }
+}

@@ -1,0 +1,44 @@
+<!doctype html>
+<html lang="en" ng-app="App">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+        <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+        <title>Angular Utilities</title>
+        <link href="/css/global.css" rel="stylesheet" type="text/css" />
+    </head>
+    <body ng-controller="BaseController">
+        <a href="#" ng-click="triggerConfirm($event)">Trigger Confirm</a>
+        <a href="#" ng-click="triggerGrowl($event)">Trigger Growl</a>
+        <a href="#" ng-click="triggerLoading($event)">Trigger Loading</a>
+
+
+        <!-- Confirm template -->
+        <div class="confirm" ng-controller="ConfirmController" ng-class="{ 'confirm--visible' : options.isVisible }">
+            <div class="confirm__dialog" ng-class="{ 'confirm__dialog--sm' : options.size == 'small', 'confirm__dialog--md' : options.size == 'medium', 'confirm__dialog--lg' : options.size == 'large' }">
+                <div class="confirm__message" ng-bind="options.message"></div>
+                <div class="confirm__actions">
+                    <button class="btn btn-sm btn-default" ng-click="handleActionClick($event, false)" ng-bind-html="options.denyText"></button>
+                    <button class="btn btn-sm btn-red" ng-click="handleActionClick($event, true)" ng-bind-html="options.okText"></button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Growl template -->
+        <div class="growl" ng-controller="GrowlController" ng-class="{ 'growl--visible' : options.isVisible }">
+            <div class="growl__dialog mod-@{{ options.type }}">
+                <a href="#" class="growl__dismiss" ng-click="dismiss($event)"><span></span></a>
+                <h6 class="growl__heading" ng-if="options.title" ng-bind-html="options.title"></h6>
+                <div class="growl__message" ng-if="options.message" ng-bind-html="options.message"></div>
+            </div>
+        </div>
+
+        <!-- Loading template -->
+        <div class="loading" ng-controller="LoadingController" ng-class="{ 'loading--visible' : options.isVisible, 'loading--has-message' : options.message != '' }">
+            <span class="loading__icon"></span>
+            <span class="loading__message" ng-bind-html="options.message"></span>
+        </div>
+    </body>
+
+    <script src="/js/global.js"></script>
+</html>

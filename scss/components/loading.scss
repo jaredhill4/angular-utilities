@@ -1,0 +1,92 @@
+/**
+ * Loading
+ */
+
+// Keyframes
+@keyframes loadingSpinner {
+  0%   { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+// Default
+.loading {
+  z-index: 999999;
+  display: block;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  margin-top: -30px;
+  margin-left: -30px;
+  height: 60px;
+  width: 60px;
+  text-align: center;
+  background-color: $color-red;
+  font-family: $font-family-base;
+  pointer-events: none;
+  box-shadow: 0 3px 10px rgba(0,0,0,0.15);
+  opacity: 0;
+  visibility: hidden;
+  transform: scale(0.8, 0.8);
+  transform-origin: 50% 50%;
+  border-radius: 30px;
+  transition: all 0.1s ease-in-out;
+
+  // Positioning
+  &.loading--absolute {
+    position: absolute;
+  }
+
+  // Visibility
+  &.loading--visible {
+    opacity: 1;
+    visibility: visible;
+    transform: scale(1,1);
+    transition: transform 0.15s cubic-bezier(0.480, -0.600, 0.480, 1.650)
+  }
+
+  // Variations
+  &.loading--has-message {
+    width: 280px;
+    height: 60px;
+    margin-left: -140px;
+    border-radius: 5px;
+    padding: 15px 20px 15px 60px;
+    line-height: 30px;
+  }
+}
+
+// Icon
+.loading__icon {
+  display: block;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  margin-top: -15px;
+  margin-left: -15px;
+  height: 30px;
+  width: 30px;
+  background-repeat: no-repeat;
+  background-size: 30px 30px;
+  background-position: center center;
+  background-image: url(#{$images-path}/icon-loading-white.png);
+  animation: loadingSpinner 1s infinite ease;
+
+  // Variations
+  .loading--has-message & {
+    left: 15px;
+    margin-left: 0;
+  }
+}
+
+// Message
+.loading__message {
+  display: none;
+  white-space: nowrap;
+  color: $color-white;
+  font-weight: $font-weight-bold;
+
+  // Variations
+  .loading--has-message & {
+    display: inline;
+  }
+}

@@ -1,0 +1,11 @@
+/**
+ * Global SCSS
+ */
+
+// Includes
+@import "./includes/variables";
+
+// Components
+@import "./components/confirm";
+@import "./components/growls";
+@import "./components/loading";
