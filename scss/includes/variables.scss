@@ -1,14 +1,17 @@
-/**
- * Variables
- */
+// --------------------------------------------------
+// screen sizes
+// --------------------------------------------------
 
-// Screen sizes
 $screen-xs: 375px;
 $screen-sm: 792px;
 $screen-md: 992px;
 $screen-lg: 1200px;
 
-// Colors - Primary
+// --------------------------------------------------
+// colors
+// --------------------------------------------------
+
+// Primary
 $color-black: #1a1c1e;
 $color-white: #fff;
 $color-blue: #2da4ef;
@@ -18,7 +21,7 @@ $color-red: #e81a4b;
 $color-green: #39b54a;
 $color-yellow: #fbbe0e;
 
-// Colors - Gray
+// Gray
 $color-gray-lightest: #efefef;
 $color-gray-lighter: #e8e8e8;
 $color-gray-light: #d8d8d8;
@@ -27,7 +30,7 @@ $color-gray-dark: #999;
 $color-gray-darker: #666;
 $color-gray-darkest: #333;
 
-// Colors - Hover
+// Hover
 $color-white-hover: darken($color-white, 8%);
 $color-black-hover: lighten($color-black, 8%);
 $color-blue-hover: darken($color-blue, 8%);
@@ -36,19 +39,26 @@ $color-green-hover: darken($color-green, 8%);
 $color-yellow-hover: darken($color-yellow, 8%);
 $color-gray-hover: darken($color-gray, 8%);
 
-// Globals
+// --------------------------------------------------
+// globals
+// --------------------------------------------------
+
 $global-radius: 10px;
 $global-transition-fast: all 0.15s ease-in-out;
 $global-transition-slow: all 0.3s ease-in-out;
 $global-border: solid 1px $color-gray;
 $global-type-margin: 1.22222rem * 2;
 
-// Typography - Font families
+// --------------------------------------------------
+// typography
+// --------------------------------------------------
+
+// Font families
 $font-family-serif: 'proxima-soft', sans-serif;
 $font-family-sans-serif: 'proxima-soft', sans-serif;
 $font-family-base: $font-family-sans-serif;
 $font-family-icons: 'FontAwesome';
 
-// Typography - Font Weight
+// Font Weight
 $font-weight-normal: 400;
 $font-weight-bold: 700;

@@ -1,12 +1,14 @@
-/**
-* Growls
-*/
+// --------------------------------------------------
+// variables
+// --------------------------------------------------
 
-// Variables
 $z-index-growl: -1;
 $z-index-growl-visible: 1150;
 
-// Default
+// --------------------------------------------------
+// base
+// --------------------------------------------------
+
 .growl {
   z-index: 1150;
   position: fixed;
@@ -27,7 +29,10 @@ $z-index-growl-visible: 1150;
   }
 }
 
-// Dialog
+// --------------------------------------------------
+// dialog
+// --------------------------------------------------
+
 .growl__dialog {
   flex: none;
   align-self: flex-start;
@@ -63,35 +68,41 @@ $z-index-growl-visible: 1150;
     color: $color-white;
     background-color: $color-green;
   }
-
   &.growl__dialog--info {
     color: $color-white;
     background-color: $color-blue;
   }
-
   &.growl__dialog--warning {
     color: $color-white;
     background-color: $color-yellow;
   }
-
   &.growl__dialog--error {
     color: $color-white;
     background-color: $color-red;
   }
 }
 
-// Heading
+// --------------------------------------------------
+// heading
+// --------------------------------------------------
+
 .growl__heading {
   margin: 0 0 $global-type-margin/4;
   color: $color-white;
 }
 
-// Message
+// --------------------------------------------------
+// message
+// --------------------------------------------------
+
 .growl__message {
   font-weight: $font-weight-normal;
 }
 
-// Close
+// --------------------------------------------------
+// dismiss
+// --------------------------------------------------
+
 .growl__dismiss {
   z-index: 100;
   position: absolute;

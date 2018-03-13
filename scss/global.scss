@@ -1,11 +1,13 @@
-/**
- * Global SCSS
- */
+// --------------------------------------------------
+// includes
+// --------------------------------------------------
 
-// Includes
 @import "./includes/variables";
 
-// Components
+// --------------------------------------------------
+// components
+// --------------------------------------------------
+
 @import "./components/confirm";
 @import "./components/growls";
 @import "./components/loading";
