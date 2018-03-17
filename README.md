@@ -1,6 +1,6 @@
 # Angular Utilities
 
-These are some simple Angular utilities I developed for use on client and internal projects.
+These are some simple Angular utilities I developed for use on client and internal projects while working at White Lion Interactive.
 
 ## Confirm
 
